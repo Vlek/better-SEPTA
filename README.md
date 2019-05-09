@@ -45,20 +45,122 @@ The unidirectional flow of data allows us to know exactly where the data comes f
 ### SEPTA API Documentation
 
 Allows introspection of the SEPTA locations and routes, and provides real time data on delays, alerts, vehicles, and routes.
+
 ``GET	Bus/Trolley Routes``
-![BTRoutes](/img/1.png)
+```
+Required Params:
+Route number: STRING
+
+Sample Response
+{
+    {​4 items
+    "lng":​-75.207958
+    "lat":​40.076849
+    "stopid":​250
+    "stopname":​"Germantown Av &amp; Bethlehem Pk 1 - FS"
+    }
+}
+```
 
 ``GET Bus/Trolley Schedules``
-![BTSched](/img/2.png)
-![BTSched2](/img/3.png)
+```
+Required Param:
+Stop ID: NUM
 
+Optional Params:
+req3: STRING
+i for inbound, o for outbound
+
+req2: NUM
+Route number
+
+req6: NUM
+Number of results
+
+Sample Response
+{​  1 item
+    "17":​[​7 items 0​:​{​7 items
+    "StopName":​"JFK Blvd & 15th St"
+    SE 577: Assignment 2
+    "Route":​"17"
+    "date":​"9:16a"
+    "day":​"Thu"
+    "Direction":​"1" "DateCalender":​"05/09/19 09:16 am" "DirectionDesc":​"20th-Johnston"
+}
+    1​:​{​7 items
+    "StopName":​"JFK Blvd & 15th St" "Route":​"17"
+    "date":​"9:26a"
+    "day":​"Thu"
+    "Direction":​"1" "DateCalender":​"05/09/19 09:26 am"
+    "DirectionDesc":​"20th-Johnston"
+}
+
+```
 
 ``GET Regional Rail Schedules``
-![RRSched](/img/4.png)
+```
+Required Param:
+req1: NUM
+
+Sample Response 
+[​16 items
+    0​:​{​4 items
+    "station":​"Airport Terminal E-F" 
+    "sched_tm":​"7:07 pm" 
+    "est_tm":​"7:07 pm" 
+    "act_tm":​"na"
+}
+1​:​{​...​}​4 items]​
+```
 
 ``GET Bus Detours``
-![BusD](/img/5.png)
-![BusD2](/img/6.png)
+
+```
+Required Param:
+req1: NUM
+Route Number
+
+Sample Response:
+[​
+    1 item
+    0​:​{​2 items "route_id":​"2" "route_info":​[​2 items
+    0​:​{​7 items
+    "route_direction":​"SB"
+    "reason":​"PGW"
+    "start_location":​"17th & Locust"
+    "end_location":​""
+    "start_date_time":​"4/16/2019 9:53 AM"
+    "end_date_time":​"5/16/2019 4:00 PM"
+    "current_message":​" "Weekdays only"...9am-5pm SB via 17th  
+    Street L - Locust R - Broad Street R - Washington           
+    Avenue L - 17th Street Reg Rt"
+    } 
+]
+
+```
 
 ``GET Next to Arrive``
-![Next](/img/7.png)
+
+```
+Required Params:
+req1: String
+Origin station
+
+req2: String
+Destination station
+
+Sample response:
+{​
+    12 items
+    "orig_train":​"9460" 
+    "orig_line":​"Airport" 
+    "orig_departure_time":​" 8:12PM" 
+    "orig_arrival_time":​" 8:30PM" 
+    "orig_delay":​"On time" "term_train":​"583" 
+    "term_line":​"Paoli/Thorndale" 
+    "term_depart_time":​" 8:49PM" 
+    "term_arrival_time":​" 9:05PM" 
+    "Connection":​"30th Street Station" "term_delay":​"On time"
+    "isdirect":​"false" 
+}
+```
