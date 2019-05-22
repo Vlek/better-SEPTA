@@ -19,10 +19,6 @@ const styles = {
     }
 };
 
-const state = {
-    anchorEl: null,
-};
-
 function Menubar(props) {
     const { classes } = props;
 
