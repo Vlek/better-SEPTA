@@ -6,19 +6,24 @@ export default class About extends Component {
       <div className="about">
         <h1>About the project:</h1>
         <p>
-          United in Crisis was created in response to the Opioid Crisis.
-          Our aim is to create a community based service that allows its users
-          to receive support from other users, find resources and spread support
-          for other members facing additions. We strive to be community focused.
+          This is a group project for a university course where we explore
+          different software architectures. In developing the solution to
+          the real world problem that we wished to attempt to address, we
+          are also attempting to learn from our experience.
         </p>
         <p>
-          This project was created for the 2019 Philadelphia Codefest.
+          This project was created for Professor Sultanik's SE577 course at
+          Drexel University.
         </p>
         <p>
-          Hackers: <a href="https://github.com/aliayeszhanova">Alia Yeszhanova</a>
-          , <a href="https://www.github.com/vlek">Derek McCammond</a>
-          , <a href="https://github.com/jlpjr1999">James Poindexter</a>
-          , and <a href="https://github.com/steveslatky">Steve Slatky</a>
+          Software Engineers/Developers: <a
+            href="https://github.com/samridhprasad">Sam Prasad
+          </a> and <a
+            href="https://github.com/pratikshekhar">Pratik Shekhar</a>
+        </p>
+        <p>
+          Software Architect: <a
+          href="https://www.github.com/vlek">Derek McCammond</a>
         </p>
       </div>
     )
