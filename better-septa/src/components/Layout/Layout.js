@@ -24,7 +24,7 @@ class Outline extends Component {
       <Layout style={{ minHeight: '100vh' }}>
         <Sider collapsible collapsed={this.state.collapsed} onCollapse={this.onCollapse}>
           <div className="logo" />
-          <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
+          <Menu theme="dark" defaultSelectedKeys={['3']} mode="inline">
             <Menu.Item key="1">
             <Link to="/">
               <Icon type="home" theme="filled" />
@@ -64,7 +64,7 @@ class Outline extends Component {
               }
             >
               <Menu.Item key="6"> Train 1</Menu.Item>
-              <Menu.Item key="8"> Train 2</Menu.Item>
+              <Menu.Item key="7"> Train 2</Menu.Item>
             </SubMenu>
             <FaBusAlt />
             <SubMenu
@@ -77,8 +77,8 @@ class Outline extends Component {
                 </span>
               }
             >
-              <Menu.Item key="6"> Bus 1</Menu.Item>
-              <Menu.Item key="8"> Bus 2</Menu.Item>
+              <Menu.Item key="8"> Bus 1</Menu.Item>
+              <Menu.Item key="9"> Bus 2</Menu.Item>
             </SubMenu>
 
           </Menu>
@@ -90,7 +90,7 @@ class Outline extends Component {
 
             <div style={{ padding: 24, background: '#fff', minHeight: 550 }}><Map /></div>
           </Content>
-          <Footer style={{ textAlign: 'center' }}>Better-Septa ©2019 Created by Derek McCammond, Samrid Prasad, Pratik ShekharD</Footer>
+          <Footer style={{ textAlign: 'center' }}>Better-Septa ©2019 Created by Derek McCammond, Samrid Prasad, Pratik Shekhar</Footer>
         </Layout>
       </Layout>
     );

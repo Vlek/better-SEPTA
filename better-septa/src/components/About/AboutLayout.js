@@ -24,7 +24,7 @@ class AboutLayout extends Component {
       <Layout style={{ minHeight: '100vh' }}>
         <Sider collapsible collapsed={this.state.collapsed} onCollapse={this.onCollapse}>
           <div className="logo" />
-          <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
+          <Menu theme="dark" defaultSelectedKeys={['2']} mode="inline">
             <Menu.Item key="1">
             <Link to="/">
               <Icon type="home" theme="filled" />
@@ -90,7 +90,7 @@ class AboutLayout extends Component {
 
             <div style={{ padding: 24, background: '#fff', minHeight: 550 }}><About /></div>
           </Content>
-          <Footer style={{ textAlign: 'center' }}>Better-Septa ©2019 Created by Derek McCammond, Samrid Prasad, Pratik ShekharD</Footer>
+          <Footer style={{ textAlign: 'center' }}>Better-Septa ©2019 Created by Derek McCammond, Samrid Prasad, Pratik Shekhar</Footer>
         </Layout>
       </Layout>
     );
