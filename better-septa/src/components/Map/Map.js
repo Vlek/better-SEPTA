@@ -6,7 +6,9 @@ const mapStyles = {
   bottom: 0,
   left: 0,
   right: 0,
-  margin: 0
+  margin: 0,
+  height: "500px",
+  width: "1000px"
 };
 
 const mapOptions = {
@@ -25,6 +27,9 @@ export class MapContainer extends Component {
       {headers: {"X-RapidAPI-Key": "648efc9968msh984da544b0866a4p133036jsn68ea9f5ba707"}})
       .then(items => items.json())
       .then(items => this.setState({items}));
+
+
+
   }
 
   render() {
