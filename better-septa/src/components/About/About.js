@@ -4,7 +4,6 @@ export default class About extends Component {
   render() {
     return (
       <div className="about">
-        <h1>About the project:</h1>
         <p>
           This is a group project for a university course where we explore
           different software architectures. In developing the solution to

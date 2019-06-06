@@ -84,7 +84,7 @@ class HomeLayout extends Component {
           </Menu>
         </Sider>
         <Layout>
-          <Header style={{ background: '#fff', padding: 0 }} >Routes Are Displayed On The Google Maps Below:</Header>
+          <Header style={{ background: '#fff', padding: 0 }} ><h1>Better SEPTA Map</h1></Header>
           <Content style={{ margin: '0 16px' }}>
             <Breadcrumb style={{ margin: '16px 0' }} />
 
