@@ -1,4 +1,8 @@
 # better-SEPTA
+
+### Mission Statement :
+Our group wishes to focus on making society a better place by better utilizing what is already available, creating cost efficient software-based services for the public. We chose to do this in order to create the most societal good that we can with limited resources, choosing to focus on goods and services most used by everyday individuals that we are knowledgeable regarding such that we would have enough first-hand experience with them to have an educated discussion regarding their optimization for better consumption. 
+
 ### Problem Statement : 
 The SEPTA transit is a vital public utility that runs on a semi-regular schedule. However, due to unforeseen issues, delays, or malfunctions, the service can be delayed for a considerable amount of time. There is currently no up-to-date information that is readily consumable for the public to gauge when they would like to use SEPTA nor when they should arrive in order to receive optimal service (e.g., catching the correct Trolley that gets one closest to their destination).
 
@@ -20,7 +24,14 @@ The contributors and their roles are follows:
 SEPTA is a vital public utility that runs on a semi-regular schedule. However, due to unforeseen issues, delays, or malfunctions, the service can be delayed for a considerable amount of time. There is currently no up-to-date information that is readily consumable for the public to gauge when they would like to use SEPTA nor when they should arrive in order to receive optimal service.
 
 ### Features
-![Table 1](/img/features.png)
+
+| User | Feature Name | Description |
+| --- | --- | --- |
+| Better SEPTA User | Map | As a user, I should be able to see an intuitive display of the locations of the SEPTA transportation methods available to me |
+| Better SEPTA User | Map Interaction | As a user, I would want to be able to intuitively interact with the display of the SEPTA transportation methods |
+| Better SEPTA User | Real-time trip data | As a user, I would want the information being displayed to be up-to-date |
+| Better SEPTA User | Filter trip data | As a user, I want to be able focus only on the transportation methods that are pertinent to me. |
+
 
 ### System Architecture
 ![Figure 1](/img/arch.png)
@@ -164,3 +175,6 @@ Sample response:
     "isdirect":​"false" 
 }
 ```
+
+### Security Considerations :
+Better SEPTA is a website which, once navigated to, allows users to securely request map information from Google and SEPTA route information from a trusted third-party API solution. We do not require user accounts, nor is a login required, mitigating the security concerns the end user may reasonably have.
