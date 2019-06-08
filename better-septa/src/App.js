@@ -6,6 +6,7 @@ import AboutLayout from "./components/About/AboutLayout";
 import HomeLayout from "./components/Home/HomeLayout";
 import Outline from "./components/Layout/Layout";
 import Map from "./components/Map/Map";
+import MapView from "./components/MapView";
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route exact path="/outline" component={Outline}/>
           <Route exact path="/map" component={Map}/>
           <Route exact path="/about" component={AboutLayout}/>
+          <Route exact path="/mapview" component={MapView}/>
         </div>
       </Router>
     </div>

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Map, Marker, GoogleApiWrapper} from 'google-maps-react';
+import store from '../stores/store.js';
 
 const mapStyles = {
   top: 0,
@@ -19,15 +20,20 @@ export class MapContainer extends Component {
 
   constructor(props){
     super(props);
-    this.state = {items:[]};
+    this._onChange = this._onChange.bind(this);
+    this.state = {items: store.getList()};
   }
+    componentDidMount() {
+      store.addChangeListener(this._onChange);
+    }
 
-  componentDidMount(){
-    fetch(`https://septa.p.rapidapi.com/hackathon/Stops/?req1=23`,
-      {headers: {"X-RapidAPI-Key": "648efc9968msh984da544b0866a4p133036jsn68ea9f5ba707"}})
-      .then(items => items.json())
-      .then(items => this.setState({items}));
-  }
+    componentWillUnmount() {
+      store.removeChangeListener(this._onChange);
+    }
+
+    _onChange() {
+      this.setState(store.getList());
+    }
 
   render() {
     return (
