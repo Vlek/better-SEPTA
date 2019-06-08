@@ -9,9 +9,6 @@ let _store = {
   list: [],
 };
 
-// Define the public event listeners and getters that
-// the views will use to listen for changes and retrieve
-// the store
 class MapStoreClass extends EventEmitter {
 
   addChangeListener(cb) {
@@ -28,13 +25,8 @@ class MapStoreClass extends EventEmitter {
 
 }
 
-// Initialize the singleton to register with the
-// dispatcher and export for React components
 const MapStore = new MapStoreClass();
 
-// Register each of the actions with the dispatcher
-// by changing the store's data and emitting a
-// change
 AppDispatcher.register((payload) => {
   const action = payload.action;
 
