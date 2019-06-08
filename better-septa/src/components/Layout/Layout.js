@@ -1,18 +1,32 @@
 import React, { Component } from 'react';
 import "antd/dist/antd.css";
-import Map from "../Map/Map";
+import GoogleMap from "../GoogleMap";
 
 import { Layout, Menu, Breadcrumb, Icon } from 'antd';
 import { FaTrain,FaSubway,FaBusAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom'
 
+import Actions from '../../actions/Actions.js';
+
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
 
 class Outline extends Component {
-  state = {
-    collapsed: false,
-  };
+
+
+constructor(props) {
+    super(props);
+    this.onSubmit = this.onSubmit.bind(this);
+    this.state = { collapsed: false};
+  }
+
+  onSubmit(e) {
+      e.preventDefault();
+      Actions.searchRoutes();
+    }
+
+
+
 
   onCollapse = collapsed => {
     console.log(collapsed);
@@ -43,7 +57,7 @@ class Outline extends Component {
               title={
                 <span>
                 <Link to="/outline">
-                  <span>Trolley</span>
+                  <span onClick = {this.onSubmit}>Trolley</span>
                   </Link>
                 </span>
               }
@@ -88,7 +102,7 @@ class Outline extends Component {
           <Content style={{ margin: '0 16px' }}>
             <Breadcrumb style={{ margin: '16px 0' }} />
 
-            <div style={{ padding: 24, background: '#fff', minHeight: 550 }}><Map /></div>
+            <div style={{ padding: 24, background: '#fff', minHeight: 550 }}><GoogleMap /></div>
           </Content>
           <Footer style={{ textAlign: 'center' }}>Better-Septa ©2019 Created by Derek McCammond, Samrid Prasad, Pratik Shekhar</Footer>
         </Layout>
