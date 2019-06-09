@@ -3,9 +3,12 @@ import Constants from '../constants/Constants';
 
 
 class Actions {
-  searchRoutes() {
+  searchRoutes(q) {
     AppDispatcher.dispatch({
       actionType: Constants.SEARCH_ROUTES,
+      query: q
+
+
 
     })
   }

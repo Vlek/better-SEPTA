@@ -14,7 +14,7 @@ class RouteStore extends EventEmitter {
   registerActions(action) {
     switch(action.actionType) {
       case Constants.SEARCH_ROUTES:
-        API.searchRoutes();
+        API.searchRoutes(action.query);
         this.emit(CHANGE_EVENT);
         break;
       case Constants.SHOW_ROUTE_RESULTS:

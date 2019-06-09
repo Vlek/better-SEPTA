@@ -3,7 +3,7 @@ import "antd/dist/antd.css";
 import GoogleMap from "../GoogleMap";
 
 import { Layout, Menu, Breadcrumb, Icon } from 'antd';
-import { FaTrain,FaSubway,FaBusAlt } from 'react-icons/fa';
+import { FaSubway } from 'react-icons/fa';
 import { Link } from 'react-router-dom'
 
 import Actions from '../../actions/Actions.js';
@@ -20,13 +20,11 @@ constructor(props) {
     this.state = { collapsed: false};
   }
 
-  onSubmit(e) {
+  onSubmit = (e) =>  {
       e.preventDefault();
-      Actions.searchRoutes();
+      const q = e.currentTarget.getAttribute('value')
+      Actions.searchRoutes(q);
     }
-
-
-
 
   onCollapse = collapsed => {
     console.log(collapsed);
@@ -55,53 +53,24 @@ constructor(props) {
             <SubMenu
               key="sub1"
               title={
-                <span>
+                <span >
                 <Link to="/outline">
-                  <span onClick = {this.onSubmit}>Trolley</span>
+                <Icon type="down-circle" theme="filled" />
+                  <span>Trolley</span>
                   </Link>
                 </span>
               }
             >
-              <Menu.Item key="3"> Trolley 1</Menu.Item>
-              <Menu.Item key="4"> Trolley 2</Menu.Item>
-              <Menu.Item key="5"> Trolley 3</Menu.Item>
+              <Menu.Item key="3"> <span onClick = {this.onSubmit} value={23}>Trolley 1</span></Menu.Item>
+              <Menu.Item key="4"> <span onClick = {this.onSubmit} value={23}>Trolley 2</span></Menu.Item>
+              <Menu.Item key="5"> <span onClick = {this.onSubmit} value={23}>Trolley 3</span></Menu.Item>
             </SubMenu>
-             <FaTrain />
-            <SubMenu
-              key="sub2"
-              title={
-                <span>
-                <Link to="/outline">
-                  <span>Train</span>
-                  </Link>
-                </span>
-              }
-            >
-              <Menu.Item key="6"> Train 1</Menu.Item>
-              <Menu.Item key="7"> Train 2</Menu.Item>
-            </SubMenu>
-            <FaBusAlt />
-            <SubMenu
-              key="sub3"
-              title={
-                <span>
-                <Link to="/outline">
-                  <span>Bus</span>
-                  </Link>
-                </span>
-              }
-            >
-              <Menu.Item key="8"> Bus 1</Menu.Item>
-              <Menu.Item key="9"> Bus 2</Menu.Item>
-            </SubMenu>
-
           </Menu>
         </Sider>
         <Layout>
           <Header style={{ background: '#fff', padding: 0 }} >Routes Are Displayed On The Google Maps Below:</Header>
           <Content style={{ margin: '0 16px' }}>
             <Breadcrumb style={{ margin: '16px 0' }} />
-
             <div style={{ padding: 24, background: '#fff', minHeight: 550 }}><GoogleMap /></div>
           </Content>
           <Footer style={{ textAlign: 'center' }}>Better-Septa ©2019 Created by Derek McCammond, Samrid Prasad, Pratik Shekhar</Footer>

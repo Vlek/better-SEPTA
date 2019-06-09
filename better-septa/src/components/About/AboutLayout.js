@@ -3,11 +3,10 @@ import "antd/dist/antd.css";
 import About from "./About.js";
 
 import { Layout, Menu, Breadcrumb, Icon } from 'antd';
-import { FaTrain,FaSubway,FaBusAlt } from 'react-icons/fa';
+import { FaSubway } from 'react-icons/fa';
 import { Link } from 'react-router-dom'
 
 const { Header, Content, Footer, Sider } = Layout;
-const { SubMenu } = Menu;
 
 class AboutLayout extends Component {
   state = {
@@ -38,49 +37,12 @@ class AboutLayout extends Component {
               </Link>
             </Menu.Item>
             <FaSubway />
-            <SubMenu
-              key="sub1"
-              title={
-                <span>
-                <Link to="/outline">
-                  <span>Trolley</span>
-                  </Link>
-                </span>
-              }
-            >
-              <Menu.Item key="3"> Trolley 1</Menu.Item>
-              <Menu.Item key="4"> Trolley 2</Menu.Item>
-              <Menu.Item key="5"> Trolley 3</Menu.Item>
-            </SubMenu>
-             <FaTrain />
-            <SubMenu
-              key="sub2"
-              title={
-                <span>
-                <Link to="/outline">
-                  <span>Train</span>
-                  </Link>
-                </span>
-              }
-            >
-              <Menu.Item key="6"> Train 1</Menu.Item>
-              <Menu.Item key="8"> Train 2</Menu.Item>
-            </SubMenu>
-            <FaBusAlt />
-            <SubMenu
-              key="sub3"
-              title={
-                <span>
-                <Link to="/outline">
-                  <span>Bus</span>
-                  </Link>
-                </span>
-              }
-            >
-              <Menu.Item key="6"> Bus 1</Menu.Item>
-              <Menu.Item key="8"> Bus 2</Menu.Item>
-            </SubMenu>
-
+             <Menu.Item key="3">
+            <Link to="/outline">
+               <Icon type="down-circle" theme="filled" />
+              <span>Trolley</span>
+              </Link>
+            </Menu.Item>
           </Menu>
         </Sider>
         <Layout>
