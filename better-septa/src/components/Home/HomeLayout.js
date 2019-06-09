@@ -52,7 +52,7 @@ class HomeLayout extends Component {
 
             <div style={{ padding: 24, background: '#fff', minHeight: 550 }}><Home /></div>
           </Content>
-          <Footer style={{ textAlign: 'center' }}>Better-Septa ©2019 Created by Derek McCammond, Samrid Prasad, Pratik Shekhar</Footer>
+          <Footer style={{ textAlign: 'center' }}>Better-Septa ©2019 Created by Derek McCammond, Samridh Prasad, Pratik Shekhar</Footer>
         </Layout>
       </Layout>
     );

@@ -18,7 +18,7 @@ class RouteStore extends EventEmitter {
         this.emit(CHANGE_EVENT);
         break;
       case Constants.SHOW_ROUTE_RESULTS:
-      console.log(action);
+      //console.log(action);
         this.setRouteResults(action.route);
         this.emit(CHANGE_EVENT);
         break;
@@ -29,7 +29,7 @@ class RouteStore extends EventEmitter {
   }
   setRouteResults(routes) {
     _routes = routes;
-    console.log(_routes);
+    //console.log(_routes);
   }
   getRouteResults() {
     return _routes;

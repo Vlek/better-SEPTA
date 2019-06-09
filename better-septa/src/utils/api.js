@@ -5,12 +5,14 @@ class API {
 
   searchRoutes(q)
   { 
-       fetch(`${PROXY}https://www3.septa.org/api/TransitViewAll/?routes=`+q)
-          .then(items => items.json())
-          .then(items => Actions.showRouteResults(items));
+     fetch(`${PROXY}https://www3.septa.org/api/TransitViewAll/?routes=`+q,
+     {
+     headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*'
+          }
+     }).then(items => items.json())
+       .then(items => Actions.showRouteResults(items));
      }
 }
 export default new API();
-
-
-
