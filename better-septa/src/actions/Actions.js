@@ -3,10 +3,10 @@ import Constants from '../constants/Constants';
 
 
 class Actions {
-  searchRoutes() {
+  searchRoutes(s) {
     AppDispatcher.dispatch({
       actionType: Constants.SEARCH_ROUTES,
-
+      query: s,
     })
   }
 

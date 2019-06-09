@@ -18,7 +18,7 @@ class HomeLayout extends Component {
     console.log(collapsed);
     this.setState({ collapsed });
   };
-
+//10,11,13,15,34,36,101,102
   render() {
     return (
       <Layout style={{ minHeight: '100vh' }}>
@@ -48,9 +48,14 @@ class HomeLayout extends Component {
                 </span>
               }
             >
-              <Menu.Item key="3"> Trolley 1</Menu.Item>
-              <Menu.Item key="4"> Trolley 2</Menu.Item>
-              <Menu.Item key="5"> Trolley 3</Menu.Item>
+              <Menu.Item key="3"> Trolley 10</Menu.Item>
+              <Menu.Item key="4"> Trolley 11</Menu.Item>
+              <Menu.Item key="5"> Trolley 13</Menu.Item>
+              <Menu.Item key="6"> Trolley 15</Menu.Item>
+              <Menu.Item key="7"> Trolley 34</Menu.Item>
+              <Menu.Item key="8"> Trolley 36</Menu.Item>
+              <Menu.Item key="9"> Trolley 101</Menu.Item>
+              <Menu.Item key="10"> Trolley 102</Menu.Item>
             </SubMenu>
              <FaTrain />
             <SubMenu

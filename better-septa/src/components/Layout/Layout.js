@@ -20,11 +20,12 @@ constructor(props) {
     this.state = { collapsed: false};
   }
 
-  onSubmit(e) {
-      e.preventDefault();
-      Actions.searchRoutes();
-    }
-
+  onSubmit = (e) =>  {
+    e.preventDefault();
+    console.log(e.currentTarget.getAttribute('value'));
+    const s = e.currentTarget.getAttribute('value')
+    Actions.searchRoutes(s);
+  }
 
 
 
@@ -61,10 +62,15 @@ constructor(props) {
                   </Link>
                 </span>
               }
-            >
-              <Menu.Item key="3"> Trolley 1</Menu.Item>
-              <Menu.Item key="4"> Trolley 2</Menu.Item>
-              <Menu.Item key="5"> Trolley 3</Menu.Item>
+            > 
+              <Menu.Item key="3"> <span onClick = {this.onSubmit} value={10}>Trolley 10</span></Menu.Item>
+              <Menu.Item key="4"> <span onClick = {this.onSubmit} value={11}>Trolley 11</span></Menu.Item>
+              <Menu.Item key="5"> <span onClick = {this.onSubmit} value={13}>Trolley 13</span></Menu.Item>
+              <Menu.Item key="6"> <span onClick = {this.onSubmit} value={15}>Trolley 15</span></Menu.Item>
+              <Menu.Item key="7"> <span onClick = {this.onSubmit} value={34}>Trolley 34</span></Menu.Item>
+              <Menu.Item key="8"> <span onClick = {this.onSubmit} value={36}>Trolley 36</span></Menu.Item>
+              <Menu.Item key="9"> <span onClick = {this.onSubmit} value={101}>Trolley 101</span></Menu.Item>
+              <Menu.Item key="10"> <span onClick = {this.onSubmit} value={102}>Trolley 102</span></Menu.Item>
             </SubMenu>
              <FaTrain />
             <SubMenu

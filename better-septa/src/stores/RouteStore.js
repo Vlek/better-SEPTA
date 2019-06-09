@@ -14,12 +14,12 @@ class RouteStore extends EventEmitter {
   registerActions(action) {
     switch(action.actionType) {
       case Constants.SEARCH_ROUTES:
-        API.searchRoutes();
+        API.searchRoutes(action.query); //Changed from no param
         this.emit(CHANGE_EVENT);
         break;
       case Constants.SHOW_ROUTE_RESULTS:
       console.log(action);
-        this.setRouteResults(action.route);
+        this.setRouteResults(action.route); 
         this.emit(CHANGE_EVENT);
         break;
     default:
