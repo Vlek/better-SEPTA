@@ -1,12 +1,11 @@
 import Actions from '../actions/Actions';
 
-
+const PROXY = 'https://cors-anywhere.herokuapp.com/'
 class API {
 
-
   searchRoutes(q)
-  { fetch('https://septa.p.rapidapi.com/hackathon/Stops/?req1='+q,
-          {headers: {"X-RapidAPI-Key": "648efc9968msh984da544b0866a4p133036jsn68ea9f5ba707"}})
+  { 
+       fetch(`${PROXY}https://www3.septa.org/api/TransitViewAll/?routes=`+q)
           .then(items => items.json())
           .then(items => Actions.showRouteResults(items));
      }
