@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Map, Marker, GoogleApiWrapper} from 'google-maps-react';
+import RouteStore from '../stores/RouteStore.js';
 
 const mapStyles = {
   top: 0,
@@ -16,28 +17,28 @@ const mapOptions = {
 };
 
 export class MapContainer extends Component {
-
   constructor(props){
     super(props);
-    this.state = {items:[]};
+    this._onChange = this._onChange.bind(this);
+    this.getAppState = this.getAppState.bind(this);
+    this.state = this.getAppState();
   }
-
+  getAppState() {
+      return {
+        items: RouteStore.getRouteResults()
+      }
+  }
   componentDidMount(){
-    fetch(`https://septa.p.rapidapi.com/hackathon/Stops/?req1=23`,
-      {headers: {"X-RapidAPI-Key": "648efc9968msh984da544b0866a4p133036jsn68ea9f5ba707"}})
-      .then(items => items.json())
-      .then(items => this.setState({items}));
-
-
-
+    RouteStore.addChangeListener(this._onChange);
   }
-
+  _onChange() {
+    this.setState(this.getAppState);
+  }
   render() {
     return (
       <Map google={this.props.google} zoom={14} style={mapStyles}
            initialCenter={{lat: 39.9566532, lng: -75.1970578}}
            defaultOptions={mapOptions}>
-
         {this.state.items.map(item =>
           <Marker
             name={item.destination}
@@ -50,5 +51,5 @@ export class MapContainer extends Component {
 }
 
 export default GoogleApiWrapper({
-  apiKey: ("AIzaSyA-Hb-MGSGC7j7xAB2dJEHMzsHPM2PUGvU ")
+  apiKey: ("AIzaSyBddYBQ0PFba2mh55J1fNoUI5W5CXNeyvo")
 })(MapContainer)

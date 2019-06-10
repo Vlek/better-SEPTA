@@ -1,21 +1,28 @@
 import React, { Component } from 'react';
 import "antd/dist/antd.css";
-import Map from "../Map/Map";
-
+import GoogleMap from "../GoogleMap";
 import { Layout, Menu, Breadcrumb, Icon } from 'antd';
-import { FaTrain,FaSubway,FaBusAlt } from 'react-icons/fa';
+import { FaSubway } from 'react-icons/fa';
 import { Link } from 'react-router-dom'
-
+import Actions from '../../actions/Actions.js';
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
 
 class Outline extends Component {
-  state = {
-    collapsed: false,
-  };
+
+    constructor(props) {
+        super(props);
+        this.onSubmit = this.onSubmit.bind(this);
+        this.state = { collapsed: false};
+      }
+
+  onSubmit = (e) =>  {
+      e.preventDefault();
+      const q = e.currentTarget.getAttribute('value')
+      Actions.searchRoutes(q);
+    }
 
   onCollapse = collapsed => {
-    console.log(collapsed);
     this.setState({ collapsed });
   };
 
@@ -41,54 +48,30 @@ class Outline extends Component {
             <SubMenu
               key="sub1"
               title={
-                <span>
+                <span >
                 <Link to="/outline">
+                <Icon type="down-circle" theme="filled" />
                   <span>Trolley</span>
                   </Link>
                 </span>
               }
             >
-              <Menu.Item key="3"> Trolley 1</Menu.Item>
-              <Menu.Item key="4"> Trolley 2</Menu.Item>
-              <Menu.Item key="5"> Trolley 3</Menu.Item>
+              <Menu.Item key="3"> <span onClick = {this.onSubmit} value={10}>Trolley 10</span></Menu.Item>
+              <Menu.Item key="4"> <span onClick = {this.onSubmit} value={11}>Trolley 11</span></Menu.Item>
+              <Menu.Item key="5"> <span onClick = {this.onSubmit} value={13}>Trolley 13</span></Menu.Item>
+              <Menu.Item key="6"> <span onClick = {this.onSubmit} value={15}>Trolley 15</span></Menu.Item>
+              <Menu.Item key="7"> <span onClick = {this.onSubmit} value={34}>Trolley 34</span></Menu.Item>
+              <Menu.Item key="8"> <span onClick = {this.onSubmit} value={36}>Trolley 36</span></Menu.Item>
+              <Menu.Item key="9"> <span onClick = {this.onSubmit} value={101}>Trolley 101</span></Menu.Item>
+              <Menu.Item key="10"> <span onClick = {this.onSubmit} value={102}>Trolley 102</span></Menu.Item>
             </SubMenu>
-             <FaTrain />
-            <SubMenu
-              key="sub2"
-              title={
-                <span>
-                <Link to="/outline">
-                  <span>Train</span>
-                  </Link>
-                </span>
-              }
-            >
-              <Menu.Item key="6"> Train 1</Menu.Item>
-              <Menu.Item key="7"> Train 2</Menu.Item>
-            </SubMenu>
-            <FaBusAlt />
-            <SubMenu
-              key="sub3"
-              title={
-                <span>
-                <Link to="/outline">
-                  <span>Bus</span>
-                  </Link>
-                </span>
-              }
-            >
-              <Menu.Item key="8"> Bus 1</Menu.Item>
-              <Menu.Item key="9"> Bus 2</Menu.Item>
-            </SubMenu>
-
           </Menu>
         </Sider>
         <Layout>
-          <Header style={{ background: '#fff', padding: 0 }} >Routes Are Displayed On The Google Maps Below:</Header>
+          <Header style={{ background: '#fff', padding: 0 }}><h1>Routes Are Displayed On The Google Maps Below:</h1></Header>
           <Content style={{ margin: '0 16px' }}>
             <Breadcrumb style={{ margin: '16px 0' }} />
-
-            <div style={{ padding: 24, background: '#fff', minHeight: 550 }}><Map /></div>
+            <div style={{ padding: 24, background: '#fff', minHeight: 550 }}><GoogleMap /></div>
           </Content>
           <Footer style={{ textAlign: 'center' }}>Better-Septa ©2019 Created by Derek McCammond, Samrid Prasad, Pratik Shekhar</Footer>
         </Layout>
@@ -96,5 +79,4 @@ class Outline extends Component {
     );
   }
 }
-
 export default Outline;
