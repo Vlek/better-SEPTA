@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import "antd/dist/antd.css";
 import About from "./About.js";
-
 import { Layout, Menu, Breadcrumb, Icon } from 'antd';
 import { FaSubway } from 'react-icons/fa';
 import { Link } from 'react-router-dom'
-
 const { Header, Content, Footer, Sider } = Layout;
 
 class AboutLayout extends Component {
@@ -49,7 +47,6 @@ class AboutLayout extends Component {
           <Header style={{ background: '#fff', padding: 0 }} ><h1>About the project</h1></Header>
           <Content style={{ margin: '0 16px' }}>
             <Breadcrumb style={{ margin: '16px 0' }} />
-
             <div style={{ padding: 24, background: '#fff', minHeight: 550 }}><About /></div>
           </Content>
           <Footer style={{ textAlign: 'center' }}>Better-Septa ©2019 Created by Derek McCammond, Samrid Prasad, Pratik Shekhar</Footer>
@@ -58,5 +55,4 @@ class AboutLayout extends Component {
     );
   }
 }
-
 export default AboutLayout;

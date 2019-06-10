@@ -1,15 +1,11 @@
 import AppDispatcher from '../dispatcher/AppDispatcher';
 import Constants from '../constants/Constants';
 
-
 class Actions {
   searchRoutes(q) {
     AppDispatcher.dispatch({
       actionType: Constants.SEARCH_ROUTES,
       query: q
-
-
-
     })
   }
 
@@ -22,9 +18,3 @@ class Actions {
   }
 }
 export default new Actions();
-
-
-
-
-
-

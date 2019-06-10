@@ -1,24 +1,20 @@
 import React, { Component } from 'react';
 import "antd/dist/antd.css";
 import GoogleMap from "../GoogleMap";
-
 import { Layout, Menu, Breadcrumb, Icon } from 'antd';
 import { FaSubway } from 'react-icons/fa';
 import { Link } from 'react-router-dom'
-
 import Actions from '../../actions/Actions.js';
-
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
 
 class Outline extends Component {
 
-
-constructor(props) {
-    super(props);
-    this.onSubmit = this.onSubmit.bind(this);
-    this.state = { collapsed: false};
-  }
+    constructor(props) {
+        super(props);
+        this.onSubmit = this.onSubmit.bind(this);
+        this.state = { collapsed: false};
+      }
 
   onSubmit = (e) =>  {
       e.preventDefault();
@@ -27,7 +23,6 @@ constructor(props) {
     }
 
   onCollapse = collapsed => {
-    //console.log(collapsed);
     this.setState({ collapsed });
   };
 
@@ -73,7 +68,7 @@ constructor(props) {
           </Menu>
         </Sider>
         <Layout>
-          <Header style={{ background: '#fff', padding: 0 }} >Routes Are Displayed On The Google Maps Below:</Header>
+          <Header style={{ background: '#fff', padding: 0 }}><h1>Routes Are Displayed On The Google Maps Below:</h1></Header>
           <Content style={{ margin: '0 16px' }}>
             <Breadcrumb style={{ margin: '16px 0' }} />
             <div style={{ padding: 24, background: '#fff', minHeight: 550 }}><GoogleMap /></div>
@@ -84,5 +79,4 @@ constructor(props) {
     );
   }
 }
-
 export default Outline;

@@ -24,7 +24,6 @@ export class MapContainer extends Component {
     this._onChange = this._onChange.bind(this);
     this.getAppState = this.getAppState.bind(this);
     this.state = this.getAppState();
-
   }
 
   getAppState() {
@@ -37,10 +36,6 @@ export class MapContainer extends Component {
     RouteStore.addChangeListener(this._onChange);
   }
 
-//  componentWillUnmount() {
-//      RouteStore.removeChangeListener(this._onChange);
-//    }
-
     _onChange() {
         this.setState(this.getAppState);
       }
@@ -50,7 +45,6 @@ export class MapContainer extends Component {
       <Map google={this.props.google} zoom={14} style={mapStyles}
            initialCenter={{lat: 39.9566532, lng: -75.1970578}}
            defaultOptions={mapOptions}>
-
         {this.state.items.map(item =>
           <Marker
             name={item.destination}
