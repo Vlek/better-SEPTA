@@ -53,128 +53,31 @@ We decided to use the Flux architecture to build the client-side web application
 
 The unidirectional flow of data allows us to know exactly where the data comes from and to which components it needs to be redirected next. The dispatcher, stores, and views are independent nodes in Flux with distinct inputs and outputs, and, where dependencies do occur between stores, they are kept in a strict hierarchy, with synchronous updates managed by the dispatcher. This gives us a clear idea about how different components react to a state change and makes it easier to debug the application. 
 
-### SEPTA API Documentation
-
-Allows introspection of the SEPTA locations and routes, and provides real time data on delays, alerts, vehicles, and routes.
-
-``GET	Bus/Trolley Routes``
-```
-Required Params:
-Route number: STRING
-
-Sample Response
-{
-    {​4 items
-    "lng":​-75.207958
-    "lat":​40.076849
-    "stopid":​250
-    "stopname":​"Germantown Av &amp; Bethlehem Pk 1 - FS"
-    }
-}
-```
-
-``GET Bus/Trolley Schedules``
-```
-Required Param:
-Stop ID: NUM
-
-Optional Params:
-req3: STRING
-i for inbound, o for outbound
-
-req2: NUM
-Route number
-
-req6: NUM
-Number of results
-
-Sample Response
-{​  1 item
-    "17":​[​7 items 0​:​{​7 items
-    "StopName":​"JFK Blvd & 15th St"
-    SE 577: Assignment 2
-    "Route":​"17"
-    "date":​"9:16a"
-    "day":​"Thu"
-    "Direction":​"1" "DateCalender":​"05/09/19 09:16 am" "DirectionDesc":​"20th-Johnston"
-}
-    1​:​{​7 items
-    "StopName":​"JFK Blvd & 15th St" "Route":​"17"
-    "date":​"9:26a"
-    "day":​"Thu"
-    "Direction":​"1" "DateCalender":​"05/09/19 09:26 am"
-    "DirectionDesc":​"20th-Johnston"
-}
-
-```
-
-``GET Regional Rail Schedules``
-```
-Required Param:
-req1: NUM
-
-Sample Response 
-[​16 items
-    0​:​{​4 items
-    "station":​"Airport Terminal E-F" 
-    "sched_tm":​"7:07 pm" 
-    "est_tm":​"7:07 pm" 
-    "act_tm":​"na"
-}
-1​:​{​...​}​4 items]​
-```
-
-``GET Bus Detours``
-
-```
-Required Param:
-req1: NUM
-Route Number
-
-Sample Response:
-[​
-    1 item
-    0​:​{​2 items "route_id":​"2" "route_info":​[​2 items
-    0​:​{​7 items
-    "route_direction":​"SB"
-    "reason":​"PGW"
-    "start_location":​"17th & Locust"
-    "end_location":​""
-    "start_date_time":​"4/16/2019 9:53 AM"
-    "end_date_time":​"5/16/2019 4:00 PM"
-    "current_message":​" "Weekdays only"...9am-5pm SB via 17th  
-    Street L - Locust R - Broad Street R - Washington           
-    Avenue L - 17th Street Reg Rt"
-    } 
-]
-
-```
-
-``GET Next to Arrive``
-
-```
-Required Params:
-req1: String
-Origin station
-
-req2: String
-Destination station
-
-Sample response:
-{​
-    12 items
-    "orig_train":​"9460" 
-    "orig_line":​"Airport" 
-    "orig_departure_time":​" 8:12PM" 
-    "orig_arrival_time":​" 8:30PM" 
-    "orig_delay":​"On time" "term_train":​"583" 
-    "term_line":​"Paoli/Thorndale" 
-    "term_depart_time":​" 8:49PM" 
-    "term_arrival_time":​" 9:05PM" 
-    "Connection":​"30th Street Station" "term_delay":​"On time"
-    "isdirect":​"false" 
-}
-```
-
 ### Security Considerations :
 Better SEPTA is a website which, once navigated to, allows users to securely request map information from Google and SEPTA route information from a trusted third-party API solution. We do not require user accounts, nor is a login required, mitigating the security concerns the end user may reasonably have.
+
+### Build and Run Instructions :
+
+#### Pre-requisites: 
+- node
+- npm
+
+#### Updating npm & node before getting started
+`npm install -g npm`
+
+`npm install -g node`
+
+#### Checking after version installation
+`npm -v`  
+
+`node -v`
+
+#### Install dependencies
+`npm install`
+
+#### Run the application
+`npm run`
+
+### Video Demo
+Link:
+https://www.youtube.com/watch?v=XOpDDP-zu-Q
