@@ -12,7 +12,7 @@ class API {
           'Access-Control-Allow-Origin': '*'
           }
      }).then(items => items.json())
-       .then(items => Actions.showRouteResults(items));
+       .then(items => Actions.showRouteResults(items,q));
      }
 }
 export default new API();

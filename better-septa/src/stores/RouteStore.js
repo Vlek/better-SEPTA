@@ -18,8 +18,7 @@ class RouteStore extends EventEmitter {
         this.emit(CHANGE_EVENT);
         break;
       case Constants.SHOW_ROUTE_RESULTS:
-      //console.log(action);
-        this.setRouteResults(action.route);
+        this.setRouteResults(action.route.routes[0][action.query]);
         this.emit(CHANGE_EVENT);
         break;
     default:

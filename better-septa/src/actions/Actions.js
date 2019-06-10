@@ -13,10 +13,11 @@ class Actions {
     })
   }
 
-  showRouteResults(routes) {
+  showRouteResults(routes,q) {
     AppDispatcher.dispatch({
       actionType: Constants.SHOW_ROUTE_RESULTS,
-      route: routes
+      route: routes,
+      query: q
     })
   }
 }
