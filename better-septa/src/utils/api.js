@@ -13,6 +13,6 @@ class API {
           }
      }).then(items => items.json())
        .then(items => Actions.showRouteResults(items,q));
-     }
+  }
 }
 export default new API();

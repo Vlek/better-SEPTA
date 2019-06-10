@@ -8,8 +8,8 @@ let _routes = [];
 
 class RouteStore extends EventEmitter {
   constructor() {
-    super();
-    AppDispatcher.register(this.registerActions.bind(this));
+       super();
+       AppDispatcher.register(this.registerActions.bind(this));
   }
   registerActions(action) {
     switch(action.actionType) {
@@ -21,14 +21,13 @@ class RouteStore extends EventEmitter {
         this.setRouteResults(action.route.routes[0][action.query]);
         this.emit(CHANGE_EVENT);
         break;
-    default:
+      default:
         return true;
     }
     return true;
   }
   setRouteResults(routes) {
     _routes = routes;
-    //console.log(_routes);
   }
   getRouteResults() {
     return _routes;

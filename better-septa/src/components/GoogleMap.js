@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {Map, Marker, GoogleApiWrapper} from 'google-maps-react';
 import RouteStore from '../stores/RouteStore.js';
 
-
 const mapStyles = {
   top: 0,
   bottom: 0,
@@ -18,28 +17,23 @@ const mapOptions = {
 };
 
 export class MapContainer extends Component {
-
   constructor(props){
     super(props);
     this._onChange = this._onChange.bind(this);
     this.getAppState = this.getAppState.bind(this);
     this.state = this.getAppState();
   }
-
   getAppState() {
       return {
         items: RouteStore.getRouteResults()
       }
-    }
-
+  }
   componentDidMount(){
     RouteStore.addChangeListener(this._onChange);
   }
-
-    _onChange() {
-        this.setState(this.getAppState);
-      }
-
+  _onChange() {
+    this.setState(this.getAppState);
+  }
   render() {
     return (
       <Map google={this.props.google} zoom={14} style={mapStyles}
