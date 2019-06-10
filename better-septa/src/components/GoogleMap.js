@@ -30,6 +30,7 @@ export class MapContainer extends Component {
   getAppState() {
       return {
         items: RouteStore.getRouteResults()
+
       }
     }
 
